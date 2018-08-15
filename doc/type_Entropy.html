@@ -1,0 +1,24 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Entropy" rel="Chapter" href="Entropy.html"><title>Entropy</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;io&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Lwt</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;buffer&nbsp;=&nbsp;<span class="constructor">Cstruct</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;handler&nbsp;=&nbsp;source:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Entropy</span>.buffer&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;token<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;source&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Rdrand</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Rdseed</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Timer</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Xentropyd</span>&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sources&nbsp;:&nbsp;<span class="constructor">Entropy</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Entropy</span>.source&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;connect&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Entropy</span>.t&nbsp;<span class="constructor">Entropy</span>.io<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;disconnect&nbsp;:&nbsp;<span class="constructor">Entropy</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="constructor">Entropy</span>.io<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;add_handler&nbsp;:&nbsp;<span class="constructor">Entropy</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Entropy</span>.handler&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Entropy</span>.token&nbsp;<span class="constructor">Entropy</span>.io<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;remove_handler&nbsp;:&nbsp;<span class="constructor">Entropy</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Entropy</span>.token&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+<span class="keyword">end</span></code></body></html>
